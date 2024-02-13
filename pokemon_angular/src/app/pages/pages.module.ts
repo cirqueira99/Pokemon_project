@@ -9,7 +9,7 @@ import { LibraryModule } from './library/library.module';
   imports: [
     CommonModule,
     HomeModule,
-    LibraryModule
+    LibraryModule,
   ]
 })
 export class PagesModule { }
