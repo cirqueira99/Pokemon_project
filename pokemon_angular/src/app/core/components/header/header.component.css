@@ -1,10 +1,24 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    background-color: #2B4589;
-    color: #fff;    
-    height: 60px;
-    width: 100%;
-  }
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2B4589;
+  color: #fff;    
+  height: 60px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A90101;
+  height: 60px;
+  width: 15%;
+}
+
+.logo img {
+  height: 58px;
+}

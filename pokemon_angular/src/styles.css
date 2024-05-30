@@ -2,3 +2,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+p {padding: 0;}
+.mat-typography p {
+    margin: 0px;
+}
+.form-group {
+    margin: 0;
+}
+
+::ng-deep .mat-mdc-outlined-button>.mat-icon {
+    margin: 0;
+}

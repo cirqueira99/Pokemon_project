@@ -1,0 +1,25 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15%;
+    height: 50px;
+    width: 85vw;
+}
+
+.form-group {
+    margin: 0 10px;
+    width: 400px;
+}
+
+
+button {
+    background-color: #A90101;
+    height: 40px;
+    width: 40px;
+}
+
+.mat-icon {    
+    color: #fff;
+    font-size: 40px;
+}

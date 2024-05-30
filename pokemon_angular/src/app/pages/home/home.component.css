@@ -3,6 +3,12 @@
     width: 100%;
 }
 
+.conteudo {
+   background-color: blueviolet;
+   height: 500px;
+   width: 500px;   
+}
+
 p{
     color: black;
 }
