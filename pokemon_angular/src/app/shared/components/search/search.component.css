@@ -13,13 +13,13 @@
 }
 
 
-button {
+.search button {
     background-color: #A90101;
     height: 40px;
     width: 40px;
 }
 
-.mat-icon {    
+button .mat-icon {    
     color: #fff;
-    font-size: 40px;
+    margin: 0;
 }

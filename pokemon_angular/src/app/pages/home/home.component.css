@@ -1,12 +1,8 @@
-.conteudo {
-    margin-top: 60px;
-    width: 100%;
-}
 
-.conteudo {
-   background-color: blueviolet;
-   height: 500px;
-   width: 500px;   
+.page {
+    background-color: white; 
+    margin-top: 60px;
+    height: 100vh;
 }
 
 p{

@@ -7,17 +7,13 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './components/search/search.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [SearchComponent],
   imports: [
-    CommonModule,
-    
     //Material
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
@@ -30,7 +26,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
     //Material
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
     MatFormFieldModule,

@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,7 +12,6 @@ import { PagesModule } from './pages/pages.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

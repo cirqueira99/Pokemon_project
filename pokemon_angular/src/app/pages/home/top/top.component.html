@@ -1,9 +1,10 @@
-<div class="top">
-    <button mat-stroked-button >
-        <mat-icon class="icon" aria-hidden="false" aria-label="icon de pesquisa" fontIcon="search">search</mat-icon> 
+<div class="top mt-5 w-100 d-flex justify-content-between">
+    <button mat-flat-button >
+        <mat-icon aria-hidden="false" aria-label="icon de pesquisa">filter_alter</mat-icon> 
+        Filtrar lista de pokemons
     </button>
-    <mat-form-field>
-        <mat-label>Favorite food</mat-label>
+    <mat-form-field appearance="outline" class="d-flex">
+        <mat-icon  aria-hidden="false" aria-label="icon de pesquisa">swap_vert</mat-icon> 
         <mat-select [formControl]="selectControl">
             <mat-option *ngFor="let option of optionsOrden" [value]="option">{{option}}</mat-option>
         </mat-select>
