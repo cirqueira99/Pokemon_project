@@ -1,0 +1,16 @@
+<div class="pokemon-card d-flex flex-column justify-content-end align-items-center m-2">
+    <div class="pokemon-card-infos d-flex flex-column align-items-center justify-content-end p-3">
+        <div class="pokemon-img">
+            <img [src]="'../../../../assets/' + this.pokemon.imagem + '.png'" alt="img-pokemon" srcset="">
+        </div>
+        <div class="pokemon-infos d-flex flex-column align-items-center justify-content-end">
+            <p class="number">#{{ this.pokemon.id }}</p>
+            <p class="name">{{ this.pokemon.name }}</p>
+            <div class="types d-flex justify-content-center mt-3">
+                <div class="type" *ngFor="let p of pokemon.types" [ngStyle]="{'background-color': p.corFundo, 'color': p.corFont}">
+                    <p>{{ p.name }}</p>
+                </div>
+            </div>    
+        </div>        
+    </div>
+</div>

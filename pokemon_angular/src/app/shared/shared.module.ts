@@ -7,13 +7,16 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './components/search/search.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { ListPokemonsComponent } from '../pages/home/list-pokemons/list-pokemons.component';
 
 
 @NgModule({
-  declarations: [SearchComponent],
+  declarations: [SearchComponent, PokemonCardComponent, ListPokemonsComponent],
   imports: [
     //Material
     ReactiveFormsModule,
+    CommonModule,
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
@@ -23,6 +26,8 @@ import { SearchComponent } from './components/search/search.component';
   ],
   exports: [
     SearchComponent,
+    PokemonCardComponent,
+    ListPokemonsComponent,
 
     //Material
     ReactiveFormsModule,
