@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IPokemon } from '../../../shared/interfaces/pokemon.interface';
+import { IPokemonCard } from '../../../shared/interfaces/pokemon.interface';
 
 @Component({
   selector: 'app-list-pokemons',
@@ -7,6 +7,6 @@ import { IPokemon } from '../../../shared/interfaces/pokemon.interface';
   styleUrl: './list-pokemons.component.css'
 })
 export class ListPokemonsComponent {
-  @Input() pokemonList: IPokemon[];
+  @Input() pokemonList: IPokemonCard[];
 
 }

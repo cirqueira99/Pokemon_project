@@ -1,6 +1,6 @@
 import { IPower } from "./powers.interface";
 
-export interface IPokemon {
+export interface IPokemonCard {
     id: string,
     name: string,
     types: IPower[],

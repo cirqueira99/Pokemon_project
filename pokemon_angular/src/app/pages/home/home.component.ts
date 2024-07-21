@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { IPokemon } from '../../shared/interfaces/pokemon.interface';
+import { Component, OnInit } from '@angular/core';
+import { IPokemonCard } from '../../shared/interfaces/pokemon.interface';
+import { PokemonService } from '../../shared/services/pokemon.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-  pokemon: IPokemon = {
+export class HomeComponent implements OnInit {
+  pokemon: IPokemonCard = {
     id: '001',
     name: 'Bulbassaur',
     types: [
@@ -20,13 +21,21 @@ export class HomeComponent {
     imagem: '001'
   }
 
-  pokemonList: IPokemon[] = [
+  pokemonList: IPokemonCard[] = [
     this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon
     // this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon,
     // this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon, this.pokemon
   ];
-  windowWidth = window.innerWidth;
-  constructor(){
-    console.log(this.windowWidth)
+  
+  constructor(private pokemonService: PokemonService){
+
+  }
+
+  ngOnInit(): void {
+    this.getAllPokemons();
+  }
+
+  getAllPokemons(){
+    this.pokemonService.getAllPokemons().subscribe(resultado => console.log(resultado));
   }
 }
