@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NamedAPIResourceList } from '../interfaces/resource.interface';
+import { NamedAPIResource, NamedAPIResourceList } from '../interfaces/Common/resource';
+import { Pokemon, PokemonType, Type } from '../interfaces/Pokemon';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +13,21 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPokemons(): Observable<any>{
+  getAllPokemons(): Observable<NamedAPIResourceList>{
     this.apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151';
 
     return this.http.get<NamedAPIResourceList>(`${ this.apiUrl }`);
   }
 
-  getPokemonByUrl(pokemon: any){
+  getPokemonByUrl(pokemon: NamedAPIResource): Observable<Pokemon>{
     this.apiUrl = pokemon.url;
 
-    return this.http.get(`${ this.apiUrl }`);
+    return this.http.get<Pokemon>(`${ this.apiUrl }`);
+  }
+
+  getPokemonType(pokemonType: PokemonType): Observable<Type>{
+    this.apiUrl = pokemonType.type.url;
+
+    return this.http.get<Type>(`${this.apiUrl}`);
   }
 }
