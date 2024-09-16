@@ -13,26 +13,25 @@ export class ListPokemonsComponent implements OnInit{
   pokemonsResponseList: Pokemon [] = [];
   pokemonsCardList: IPokemonCard[] = [];  
   typesPokemons: ITypeColors[] = [
-    { name: 'bug', background: 'rgba(114, 159, 63, 0.65)', color: '#FFF' },
-    { name: 'dark', background: 'rgba(79, 78, 78, 0.65)', color: '#FFF' },
-    { name: 'electric', background: 'rgba(238, 213, 53, 0.65)', color: '#000' },
-    { name: 'fairy', background: 'rgba(250, 196, 234, 0.65)', color: '#000' },
-    { name: 'fighting', background: 'rgba(197, 109, 55, 0.65)', color: '#FFF' },
+    { name: 'bug', background: 'rgba(114, 159, 63, 0.7)', color: '#FFF' },
+    { name: 'dark', background: 'rgba(79, 78, 78, 0.7)', color: '#FFF' },
+    { name: 'dragon', background: 'linear-gradient(180deg, #53a4cf, #f16e57 70%)', color: '#FFF' },
+    { name: 'electric', background: 'rgba(238, 213, 53, 0.7)', color: '#000' },
+    { name: 'fairy', background: 'rgba(250, 196, 234, 0.7)', color: '#000' },
+    { name: 'fighting', background: 'rgba(197, 109, 55, 0.7)', color: '#FFF' },
     { name: 'fire', background: 'rgba(227, 0, 0, 0.70)', color: '#FFF' },
     { name: 'flying', background: 'linear-gradient(180deg, #20c8ff, #e5e6e7 80%)', color: '#000' },
-    { name: 'ghost', background: 'rgba(123, 98, 163, 0.65)', color: '#FFF' },
-    { name: 'grass', background: 'rgba(9, 82, 20, 0.65)', color: '#FFF' },
-    { name: 'ground', background: 'rgba(163, 140, 33, 0.65)', color: '#FFF' },
-    { name: 'ice', background: 'rgba(81, 196, 231, 0.65)', color: '#000' },
-    { name: 'normal', background: 'rgba(230, 230, 230, 0.65)', color: '#000' },
-    { name: 'poison', background: 'rgba(185, 127, 201, 0.65)', color: '#FFF' },
-    { name: 'psychic', background: 'rgba(243, 102, 185, 0.65)', color: '#FFF' },
-    { name: 'rock', background: 'rgba(104, 87, 9, 0.65)', color: '#FFF' },
-    { name: 'steel', background: 'rgba(158, 183, 184, 0.65)', color: '#000' },
-    { name: 'water', background: 'rgba(12, 83, 129, 0.65)', color: '#FFF' },
-    { name: 'dragon', background: 'linear-gradient(180deg, #53a4cf, #f16e57 70%)', color: '#FFF' }, // unchanged
-    { name: 'stellar', background: 'linear-gradient(#f231a3, #8ca2f3 85%)', color: '#000' }, // unchanged
-    { name: 'unknown', background: 'rgba(127, 130, 143, 0.65)', color: '#FFF' }
+    { name: 'ghost', background: 'rgba(123, 98, 163, 0.7)', color: '#FFF' },
+    { name: 'grass', background: 'rgba(9, 82, 20, 0.7)', color: '#FFF' },
+    { name: 'ground', background: 'rgba(163, 140, 33, 0.7)', color: '#FFF' },
+    { name: 'ice', background: 'rgba(81, 196, 231, 0.7)', color: '#000' },
+    { name: 'normal', background: 'rgba(230, 230, 230, 0.7)', color: '#000' },
+    { name: 'poison', background: 'rgba(185, 127, 201, 0.7)', color: '#FFF' },
+    { name: 'psychic', background: 'rgba(243, 102, 185, 0.7)', color: '#FFF' },
+    { name: 'rock', background: 'rgba(104, 87, 9, 0.7)', color: '#FFF' },
+    { name: 'steel', background: 'linear-gradient(180deg, #f231a3, #8ca2f3 85%)', color: '#000' },
+    { name: 'water', background: 'rgba(12, 83, 129, 0.7)', color: '#FFF' }, 
+    { name: 'unknown', background: 'rgba(127, 130, 143, 0.7)', color: '#FFF' }
   ];
 
   constructor(private pokemonService: PokemonService){}
@@ -83,7 +82,7 @@ export class ListPokemonsComponent implements OnInit{
   createPokemonCard(pokemon: Pokemon): void{    
     let pokemonCard: IPokemonCard = {
       id: pokemon.id,
-      name: pokemon.name,
+      name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1).toLowerCase(),
       types: this.createPokemonTypes(pokemon),
       typesDamage: [],
       imagem: pokemon.sprites.front_default?? ''
@@ -104,7 +103,7 @@ export class ListPokemonsComponent implements OnInit{
     let colorsType: ITypeColors = this.typesPokemons.find(t => t.name == typeName)!;
 
     const pokemonType: IType = { 
-      name: typeName, 
+      name: typeName.charAt(0).toUpperCase() + typeName.slice(1).toLowerCase(), 
       colorBack: colorsType.background,
       colorFront: colorsType.color
     };
