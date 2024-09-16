@@ -5,8 +5,8 @@
     </button>
     <mat-form-field appearance="outline" class="d-flex">
         <mat-icon  aria-hidden="false" aria-label="icon de pesquisa">swap_vert</mat-icon> 
-        <mat-select [formControl]="selectControl">
-            <mat-option *ngFor="let option of optionsOrden" [value]="option">{{option}}</mat-option>
+        <mat-select [formControl]="selectControl" (selectionChange)="executeOrder()">
+            <mat-option *ngFor="let option of optionsOrder; let i = index" [value]="i">{{option}}</mat-option>
         </mat-select>
     </mat-form-field>
 </div>

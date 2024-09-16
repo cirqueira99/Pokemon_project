@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,8 +7,14 @@ import { FormControl } from '@angular/forms';
   styleUrl: './top.component.css'
 })
 export class TopComponent {
-  optionsOrden: string[] = ['Número', 'Habilidade'];
-  selectControl: FormControl = new FormControl(this.optionsOrden[0]);
+  @Output() orderPokemonsEvent = new EventEmitter<number>();
+  optionsOrder: string[] = ['Número crescente', 'Número decrescente', 'Ordem alfabética A-Z', 'Ordem alfabética Z-A'];
+  selectControl: FormControl = new FormControl(0);
 
   constructor(){}
+
+  executeOrder(){
+    this.orderPokemonsEvent.emit(this.selectControl.value);
+  }
+
 }
