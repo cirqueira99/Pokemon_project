@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './components/search/search.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { ListPokemonsComponent } from '../pages/home/list-pokemons/list-pokemons.component';
+import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -22,7 +23,11 @@ import { ListPokemonsComponent } from '../pages/home/list-pokemons/list-pokemons
     MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogTitle, 
+    MatDialogContent, 
+    MatDialogActions, 
+    MatDialogClose
   ],
   exports: [
     SearchComponent,
@@ -36,7 +41,11 @@ import { ListPokemonsComponent } from '../pages/home/list-pokemons/list-pokemons
     MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
-    MatSelectModule 
+    MatSelectModule,
+    MatDialogTitle, 
+    MatDialogContent, 
+    MatDialogActions, 
+    MatDialogClose
   ]
 })
 export class SharedModule { }

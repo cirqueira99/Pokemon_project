@@ -1,0 +1,118 @@
+.modal-container{
+    background-color: #202020;
+    height: 100%;
+}
+
+.modal-title, .select-title{
+    color: white;
+}
+
+.caracters, .select-filter-types {
+    height: 375px;
+}
+
+.caracters {
+    width: 300px;
+}
+
+.height p, .weight p {
+    font-size: 14px;
+    color: #e4e4e4;
+}
+
+.height-buttons, .weight-buttons {
+    height: 120px;
+}
+
+.height-btn-group, .weight-btn-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 75px;
+}
+
+.height-btn-group img, .weight-btn-group img{
+    transition: 0.2s; 
+    border-radius: 5px;
+    width: 70px;
+}
+
+.height-btn-group img:hover, .weight-btn-group img:hover{
+    width: 72px;
+}
+
+.height-btn-group p, .weight-btn-group p {
+    font-size: 12px;
+    color: #bcbcbc;
+}
+
+.height-btn-group button, .weight-btn-group button {
+    font-size: 12px;
+    color: #bcbcbc;
+    background-color: #343434;
+    height: 25px;
+    width: 90px;   
+    transition: 0.2s; 
+}
+
+.height-btn-group button:hover, .weight-btn-group button:hover {
+    background-color: #111111;
+}
+
+.select-title{
+    color: white;
+}
+
+p {
+    font-weight: 300;
+    padding: 0;
+}
+
+.select-filter-types {
+    font-size: 14px;
+    width: 360px;
+}
+
+.types {
+    flex-wrap: wrap;
+    width:360px;
+}
+
+.type {
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0px 15px;
+    margin: 15px;
+    height: 25px;    
+    width: 85px;   
+    transition: 0.2s;
+}
+/* 
+.type:hover {
+    box-shadow: rgb(137 137 137 / 50%) 0px 0px 15px;
+} */
+
+.type:hover p {
+    font-size: 13px;
+}
+
+.type p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.modal-buttons button {
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.btn-reset {
+    background-color: #666597;    
+}
+
+.btn-aply {
+    background-color: #950000;
+}

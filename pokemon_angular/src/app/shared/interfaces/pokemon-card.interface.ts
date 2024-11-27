@@ -1,15 +1,9 @@
 export interface IPokemonCard {
     id: number,
     name: string,
-    types: IType[],
-    typesDamage: IType[]
+    types: ITypeColors[],
+    typesDamage: ITypeColors[]
     imagem: string
-}
-
-export interface IType {    
-    name: string,
-    colorBack: string,
-    colorFront: string
 }
 
 export interface ITypeColors {

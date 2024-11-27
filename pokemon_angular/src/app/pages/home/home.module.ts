@@ -4,13 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopComponent } from './top/top.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { FilterPokemonsComponent } from './top/filter-pokemons/filter-pokemons.component';
 
 const home_route: Routes = [
   { path: '', component: HomeComponent },
 ];
 
 @NgModule({
-  declarations: [HomeComponent, TopComponent],
+  declarations: [HomeComponent, TopComponent, FilterPokemonsComponent],
   imports: [
     CommonModule,
     SharedModule,

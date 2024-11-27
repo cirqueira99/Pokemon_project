@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from '../../../shared/interfaces/Pokemon';
 import { PokemonService } from '../../../shared/services/pokemon.service';
-import { IPokemonCard, IType, ITypeColors } from '../../../shared/interfaces/pokemon-card.interface';
+import { IPokemonCard, ITypeColors } from '../../../shared/interfaces/pokemon-card.interface';
 import { NamedAPIResource, NamedAPIResourceList } from '../../../shared/interfaces/Common';
 
 @Component({

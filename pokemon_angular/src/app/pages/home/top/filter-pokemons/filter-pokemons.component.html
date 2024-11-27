@@ -1,0 +1,66 @@
+<div class="modal-container p-2 d-flex flex-column">
+  <!-- <h2 mat-dialog-title class="modal-title">Filtro de pokemons</h2> -->
+  <mat-dialog-content>
+    <div class="content-modal d-flex justify-content-between">      
+      <div class="caracters d-flex flex-column justify-content-start">        
+        <div class="height mt-4">
+          <p>Altura</p>
+          <div class="height-buttons d-flex justify-content-between align-content-arround">
+            <div class="height-btn-group">              
+              <img id="img-small" src="../../../../../assets/pk-shadows/pk-small.jpg" alt="" srcset="" (click)="selectCaracterPokemon('small')">
+               <p class="mt-1">Pequeno</p>
+            </div>
+            <div class="height-btn-group">
+              <img id="img-medium" src="../../../../../assets/pk-shadows/pk-medium.jpg" alt="" srcset="" (click)="selectCaracterPokemon('medium')">              
+               <p class="mt-1">Médio</p>
+            </div>
+            <div class="height-btn-group">
+              <img id="img-tall" src="../../../../../assets/pk-shadows/pk-tall.jpg" alt="" srcset="" (click)="selectCaracterPokemon('tall')">
+              <p class="mt-1">Alto</p>
+            </div>
+          </div>
+        </div>
+        <div class="weight mt-4">
+          <p>Peso</p>
+          <div class="weight-buttons d-flex justify-content-between align-content-arround">
+            <div class="weight-btn-group">
+              <img id="img-light" src="../../../../../assets/pk-shadows/pk-light.jpg" alt="" srcset="" (click)="selectCaracterPokemon('light')">              
+              <p class="mt-1">Leve</p>
+            </div>
+            <div class="weight-btn-group">
+              <img id="img-average" src="../../../../../assets/pk-shadows/pk-average.jpg" alt="" srcset="" (click)="selectCaracterPokemon('average')">
+              <p class="mt-1">Médio</p>
+            </div>
+            <div class="weight-btn-group">
+              <img id="img-heavy" src="../../../../../assets/pk-shadows/pk-heavy.jpg" alt="" srcset="" (click)="selectCaracterPokemon('heavy')">              
+              <p class="mt-1">Pesado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select-filter-types">
+        <p class="select-title p-0 text-center">Selecione os tipos</p>
+        <div class="types d-flex justify-content-center align-start mt-3">
+          <ng-container *ngFor="let t of this.typesPokemons">
+            <div id="{{ t.name }}" class="type" *ngIf="t.name != 'Unknown'" [ngStyle]="{'background': t.background, 'color': t.color}" (click)="selectTypePokemon(t.name)">
+                <p>{{ t.name }}</p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="modal-buttons d-flex justify-content-center col-12">  
+      <button mat-flat-button class="btn-reset mr-3" (click)="resetFilters()">
+        <mat-icon>filter_alt_off</mat-icon>
+        Resetar Filtros
+      </button>  
+      <button mat-flat-button class="btn-aply mr-3" (click)="search()">
+        <mat-icon>search</mat-icon>
+        Pesquisar
+      </button>  
+    </div>
+  </mat-dialog-actions>
+ </div>

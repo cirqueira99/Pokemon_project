@@ -7,7 +7,7 @@
             <p class="number">#{{ this.pokemonCard.id }}</p>
             <p class="name">{{ this.pokemonCard.name }}</p>
             <div class="types d-flex justify-content-center mt-3">
-                <div class="type" *ngFor="let t of this.pokemonCard.types" [ngStyle]="{'background': t.colorBack, 'color': t.colorFront}">
+                <div class="type" *ngFor="let t of this.pokemonCard.types" [ngStyle]="{'background': t.background, 'color': t.color}">
                     <p>{{ t.name }}</p>
                 </div>
             </div>    

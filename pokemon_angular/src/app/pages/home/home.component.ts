@@ -2,7 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../shared/services/pokemon.service';
 import { NamedAPIResource, NamedAPIResourceList } from '../../shared/interfaces/Common/resource';
 import { Pokemon } from '../../shared/interfaces/Pokemon';
-import { IPokemonCard, IType, ITypeColors } from '../../shared/interfaces/pokemon-card.interface';
+import { IPokemonCard, ITypeColors } from '../../shared/interfaces/pokemon-card.interface';
+
+
+interface IFilterSelected {
+  caracters: string[],
+  types: string[]
+}
 
 @Component({
   selector: 'app-home',
@@ -52,8 +58,7 @@ export class HomeComponent implements OnInit {
           });
         });
       },
-      error: erro => console.log(erro), 
-      complete: () => console.log(this.pokemonsCardList)
+      error: erro => console.log(erro)
     });
   }  
 
@@ -67,23 +72,24 @@ export class HomeComponent implements OnInit {
     };
 
     this.pokemonsCardList.push(pokemonCard);
+    this.pokemonsCardListNew.push(pokemonCard);
   }
 
-  createPokemonTypes(pokemon: Pokemon): IType[]{
-    let pokemonTypes: IType[] = [];
+  createPokemonTypes(pokemon: Pokemon): ITypeColors[]{
+    let pokemonTypes: ITypeColors[] = [];
 
     pokemon.types.forEach(t => pokemonTypes.push(this.createPokemonType(t.type.name)));
 
     return pokemonTypes;
   };
 
-  createPokemonType(typeName: string): IType{
+  createPokemonType(typeName: string): ITypeColors{
     let colorsType: ITypeColors = this.typesPokemons.find(t => t.name == typeName)!;
 
-    const pokemonType: IType = { 
+    const pokemonType: ITypeColors = { 
       name: typeName.charAt(0).toUpperCase() + typeName.slice(1).toLowerCase(), 
-      colorBack: colorsType.background,
-      colorFront: colorsType.color
+      background: colorsType.background,
+      color: colorsType.color
     };
 
     return pokemonType;
@@ -116,5 +122,26 @@ export class HomeComponent implements OnInit {
       return -1;
     }    
     return 0;
+  }
+
+  filterPokemons(filtersSelected: IFilterSelected): void{
+    this.pokemonsCardListNew = [];
+    
+    this.pokemonsCardList.forEach(pokemonCard => {
+      if(this.findPokemon(pokemonCard, filtersSelected.caracters, filtersSelected.types)){
+        this.pokemonsCardListNew.push(pokemonCard);
+      }
+    });
+  }
+
+  findPokemon(pokemonCard: IPokemonCard, filtersByType: string[], filtersBycaracters: string[]): boolean{
+    let find  = false;
+    
+    pokemonCard.types.forEach(t => {
+      find = filtersByType.includes(t.name);
+    });
+
+    
+    return find;    
   }
 }
